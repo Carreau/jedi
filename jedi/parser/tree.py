@@ -543,7 +543,7 @@ class BaseNode(Base):
                 return binary_search(index + 1, upper)
 
         if not ((1, 0) <= position <= self.children[-1].end_pos):
-            raise ValueError('Please provide a position that exists within this node.')
+            raise ValueError('Please provide a position that exists within this node. %s %s %s' % ((1, 0) , position , self.children[-1].end_pos))
         return binary_search(0, len(self.children) - 1)
 
     @Python3Method
